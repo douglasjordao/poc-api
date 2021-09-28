@@ -1,0 +1,16 @@
+D:\Work\PoC\Projetos\LG.POC\LG.POC.InterfaceFabricas\bin\Release\LG.POC.InterfaceFabricas.dll
+D:\Work\PoC\Projetos\LG.POC\LG.POC.InterfaceFabricas\bin\Release\LG.POC.InterfaceFabricas.pdb
+D:\Work\PoC\Projetos\LG.POC\LG.POC.InterfaceFabricas\obj\Release\LG.POC.InterfaceFabricas.csproj.AssemblyReference.cache
+D:\Work\PoC\Projetos\LG.POC\LG.POC.InterfaceFabricas\obj\Release\LG.POC.InterfaceFabricas.csproj.CoreCompileInputs.cache
+D:\Work\PoC\Projetos\LG.POC\LG.POC.InterfaceFabricas\obj\Release\LG.POC.InterfaceFabricas.dll
+D:\Work\PoC\Projetos\LG.POC\LG.POC.InterfaceFabricas\obj\Release\LG.POC.InterfaceFabricas.pdb
+D:\PoC\Projetos\LG.POC\LG.POC.InterfaceFabricas\bin\Release\LG.POC.InterfaceFabricas.dll
+D:\PoC\Projetos\LG.POC\LG.POC.InterfaceFabricas\bin\Release\LG.POC.InterfaceFabricas.pdb
+D:\PoC\Projetos\LG.POC\LG.POC.InterfaceFabricas\obj\Release\LG.POC.InterfaceFabricas.csprojResolveAssemblyReference.cache
+D:\PoC\Projetos\LG.POC\LG.POC.InterfaceFabricas\obj\Release\LG.POC.InterfaceFabricas.dll
+D:\PoC\Projetos\LG.POC\LG.POC.InterfaceFabricas\obj\Release\LG.POC.InterfaceFabricas.pdb
+D:\PoC\Projetos\Codigo\API\LG.POC.InterfaceFabricas\bin\Release\LG.POC.InterfaceFabricas.dll
+D:\PoC\Projetos\Codigo\API\LG.POC.InterfaceFabricas\bin\Release\LG.POC.InterfaceFabricas.pdb
+D:\PoC\Projetos\Codigo\API\LG.POC.InterfaceFabricas\obj\Release\LG.POC.InterfaceFabricas.csprojResolveAssemblyReference.cache
+D:\PoC\Projetos\Codigo\API\LG.POC.InterfaceFabricas\obj\Release\LG.POC.InterfaceFabricas.dll
+D:\PoC\Projetos\Codigo\API\LG.POC.InterfaceFabricas\obj\Release\LG.POC.InterfaceFabricas.pdb

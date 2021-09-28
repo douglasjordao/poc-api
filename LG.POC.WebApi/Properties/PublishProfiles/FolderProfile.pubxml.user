@@ -1,0 +1,240 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <_PublishTargetUrl>D:\PoC\Projetos\Site\LG.POC.API</_PublishTargetUrl>
+    <History>True|2021-09-02T23:54:49.3347140Z;True|2021-09-02T20:49:23.5232421-03:00;True|2021-09-02T20:44:38.8222962-03:00;True|2021-09-02T19:51:12.4934057-03:00;True|2021-09-02T19:49:34.3781596-03:00;False|2021-09-02T19:48:36.9354457-03:00;True|2021-09-02T15:07:10.0791889-03:00;True|2021-09-02T08:34:21.7370020-03:00;True|2021-09-02T08:31:57.6197602-03:00;True|2021-09-01T22:57:27.6233849-03:00;True|2021-09-01T22:53:22.6826113-03:00;True|2021-09-01T22:40:31.4160982-03:00;</History>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="ApplicationInsights.config">
+      <publishTime>08/20/2021 17:13:29</publishTime>
+    </File>
+    <File Include="App_Start/SwaggerConfig.cs">
+      <publishTime>09/23/2021 15:27:22</publishTime>
+    </File>
+    <File Include="App_Start/WebApiConfig.cs">
+      <publishTime>09/23/2021 15:59:36</publishTime>
+    </File>
+    <File Include="bin/ApplicationInsights.config">
+      <publishTime>08/20/2021 17:13:29</publishTime>
+    </File>
+    <File Include="bin/App_global.asax.compiled">
+      <publishTime>09/02/2021 08:31:56</publishTime>
+    </File>
+    <File Include="bin/App_global.asax.dll">
+      <publishTime>09/02/2021 08:31:56</publishTime>
+    </File>
+    <File Include="bin/App_global.asax.pdb">
+      <publishTime>09/02/2021 08:31:56</publishTime>
+    </File>
+    <File Include="bin/LG.POC.InterfaceFabricas.dll">
+      <publishTime>09/28/2021 17:26:32</publishTime>
+    </File>
+    <File Include="bin/LG.POC.InterfaceFabricas.pdb">
+      <publishTime>09/02/2021 20:44:34</publishTime>
+    </File>
+    <File Include="bin/LG.POC.ServicoMapeadores.dll">
+      <publishTime>09/28/2021 17:34:59</publishTime>
+    </File>
+    <File Include="bin/LG.POC.ServicoMapeadores.pdb">
+      <publishTime>09/02/2021 20:54:45</publishTime>
+    </File>
+    <File Include="bin/LG.POC.WebApi.dll">
+      <publishTime>09/28/2021 17:35:01</publishTime>
+    </File>
+    <File Include="bin/LG.POC.WebApi.pdb">
+      <publishTime>09/02/2021 20:54:48</publishTime>
+    </File>
+    <File Include="bin/LG.POC.WebApi.xml">
+      <publishTime>09/28/2021 17:35:01</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AI.Agent.Intercept.dll">
+      <publishTime>12/07/2015 18:04:38</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AI.DependencyCollector.dll">
+      <publishTime>03/10/2016 14:26:18</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AI.PerfCounterCollector.dll">
+      <publishTime>03/10/2016 14:26:26</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AI.ServerTelemetryChannel.dll">
+      <publishTime>03/09/2016 12:00:14</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AI.Web.dll">
+      <publishTime>03/10/2016 14:26:26</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AI.WindowsServer.dll">
+      <publishTime>03/10/2016 14:26:26</publishTime>
+    </File>
+    <File Include="bin/Microsoft.ApplicationInsights.dll">
+      <publishTime>03/09/2016 11:57:34</publishTime>
+    </File>
+    <File Include="bin/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll">
+      <publishTime>06/15/2015 02:06:24</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Web.Infrastructure.dll">
+      <publishTime>07/25/2012 08:48:56</publishTime>
+    </File>
+    <File Include="bin/Newtonsoft.Json.dll">
+      <publishTime>06/22/2015 08:06:54</publishTime>
+    </File>
+    <File Include="bin/roslyn/csc.exe">
+      <publishTime>06/18/2015 20:19:46</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.Build.Tasks.CodeAnalysis.dll">
+      <publishTime>06/18/2015 20:19:46</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.CSharp.dll">
+      <publishTime>06/18/2015 20:19:46</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.dll">
+      <publishTime>06/18/2015 20:19:44</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.VisualBasic.dll">
+      <publishTime>06/18/2015 20:19:46</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CSharp.Core.targets">
+      <publishTime>06/18/2015 20:19:46</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.VisualBasic.Core.targets">
+      <publishTime>06/18/2015 20:19:46</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Collections.Immutable.dll">
+      <publishTime>06/18/2015 20:19:46</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Reflection.Metadata.dll">
+      <publishTime>06/18/2015 20:19:46</publishTime>
+    </File>
+    <File Include="bin/roslyn/vbc.exe">
+      <publishTime>06/18/2015 20:19:46</publishTime>
+    </File>
+    <File Include="bin/roslyn/VBCSCompiler.exe">
+      <publishTime>06/18/2015 20:19:46</publishTime>
+    </File>
+    <File Include="bin/roslyn/VBCSCompiler.exe.config">
+      <publishTime>06/18/2015 20:19:46</publishTime>
+    </File>
+    <File Include="bin/Swashbuckle.Core.dll">
+      <publishTime>07/07/2017 22:30:56</publishTime>
+    </File>
+    <File Include="bin/System.Net.Http.Formatting.dll">
+      <publishTime>11/28/2018 13:00:36</publishTime>
+    </File>
+    <File Include="bin/System.Web.Cors.dll">
+      <publishTime>11/28/2018 12:58:44</publishTime>
+    </File>
+    <File Include="bin/System.Web.Http.Cors.dll">
+      <publishTime>11/28/2018 13:01:26</publishTime>
+    </File>
+    <File Include="bin/System.Web.Http.dll">
+      <publishTime>11/28/2018 13:01:00</publishTime>
+    </File>
+    <File Include="bin/System.Web.Http.WebHost.dll">
+      <publishTime>01/28/2015 04:03:46</publishTime>
+    </File>
+    <File Include="bin/WebActivatorEx.dll">
+      <publishTime>02/08/2013 13:42:28</publishTime>
+    </File>
+    <File Include="Controllers/ClienteController.cs">
+      <publishTime>09/28/2021 17:12:36</publishTime>
+    </File>
+    <File Include="Controllers/DocumentacaoController.cs">
+      <publishTime>09/04/2021 17:15:32</publishTime>
+    </File>
+    <File Include="Controllers/PedidoController.cs">
+      <publishTime>09/24/2021 10:22:32</publishTime>
+    </File>
+    <File Include="Controllers/ProdutoController.cs">
+      <publishTime>09/28/2021 17:20:20</publishTime>
+    </File>
+    <File Include="Global.asax">
+      <publishTime>08/20/2021 17:13:23</publishTime>
+    </File>
+    <File Include="Global.asax.cs">
+      <publishTime>08/20/2021 17:13:23</publishTime>
+    </File>
+    <File Include="LG.POC.WebApi.csproj">
+      <publishTime>09/05/2021 11:03:14</publishTime>
+    </File>
+    <File Include="LG.POC.WebApi.csproj.user">
+      <publishTime>09/05/2021 11:03:14</publishTime>
+    </File>
+    <File Include="Models/Cliente.cs">
+      <publishTime>08/25/2021 11:15:46</publishTime>
+    </File>
+    <File Include="Models/Pedido.cs">
+      <publishTime>09/02/2021 17:59:08</publishTime>
+    </File>
+    <File Include="Models/Produto.cs">
+      <publishTime>08/25/2021 11:15:55</publishTime>
+    </File>
+    <File Include="packages.config">
+      <publishTime>09/05/2021 10:52:06</publishTime>
+    </File>
+    <File Include="PrecompiledApp.config">
+      <publishTime>09/02/2021 08:31:52</publishTime>
+    </File>
+    <File Include="Properties/AssemblyInfo.cs">
+      <publishTime>08/20/2021 17:13:22</publishTime>
+    </File>
+    <File Include="roslyn/csc.exe">
+      <publishTime>06/18/2015 20:19:46</publishTime>
+    </File>
+    <File Include="roslyn/Microsoft.Build.Tasks.CodeAnalysis.dll">
+      <publishTime>06/18/2015 20:19:46</publishTime>
+    </File>
+    <File Include="roslyn/Microsoft.CodeAnalysis.CSharp.dll">
+      <publishTime>06/18/2015 20:19:46</publishTime>
+    </File>
+    <File Include="roslyn/Microsoft.CodeAnalysis.dll">
+      <publishTime>06/18/2015 20:19:44</publishTime>
+    </File>
+    <File Include="roslyn/Microsoft.CodeAnalysis.VisualBasic.dll">
+      <publishTime>06/18/2015 20:19:46</publishTime>
+    </File>
+    <File Include="roslyn/Microsoft.CSharp.Core.targets">
+      <publishTime>06/18/2015 20:19:46</publishTime>
+    </File>
+    <File Include="roslyn/Microsoft.VisualBasic.Core.targets">
+      <publishTime>06/18/2015 20:19:46</publishTime>
+    </File>
+    <File Include="roslyn/System.Collections.Immutable.dll">
+      <publishTime>06/18/2015 20:19:46</publishTime>
+    </File>
+    <File Include="roslyn/System.Reflection.Metadata.dll">
+      <publishTime>06/18/2015 20:19:46</publishTime>
+    </File>
+    <File Include="roslyn/vbc.exe">
+      <publishTime>06/18/2015 20:19:46</publishTime>
+    </File>
+    <File Include="roslyn/VBCSCompiler.exe">
+      <publishTime>06/18/2015 20:19:46</publishTime>
+    </File>
+    <File Include="roslyn/VBCSCompiler.exe.config">
+      <publishTime>06/18/2015 20:19:46</publishTime>
+    </File>
+    <File Include="scripts/ai.0.22.9-build00167.js">
+      <publishTime>08/20/2021 17:13:29</publishTime>
+    </File>
+    <File Include="scripts/ai.0.22.9-build00167.min.js">
+      <publishTime>08/20/2021 17:13:29</publishTime>
+    </File>
+    <File Include="SwaggerExtensions/index.html">
+      <publishTime>04/09/2021 14:02:50</publishTime>
+    </File>
+    <File Include="v1/doc.json">
+      <publishTime>09/05/2021 10:46:38</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>09/05/2021 10:52:28</publishTime>
+    </File>
+    <File Include="Web.Debug.config">
+      <publishTime>08/20/2021 17:13:23</publishTime>
+    </File>
+    <File Include="Web.Release.config">
+      <publishTime>08/20/2021 17:13:23</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

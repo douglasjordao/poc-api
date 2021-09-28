@@ -1,0 +1,684 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "API Cadastro de Pedidos",
+    "description": "API que auxilia na automatização de cadastro de Clientes, Produtos e Pedidos.",
+    "version": "1.0.0",
+    "contact": {
+      "name": "Douglas Jordão",
+      "email": "douglas.jordao@lg.com.br"
+    },
+    "license": {
+      "name": "Licença: GPLv3",
+      "url": "https://www.gnu.org/licenses/gpl-3.0.html"
+    }
+  },
+  "servers": [
+    {
+      "url": "https://pc-1642.lggo.com.br/lg.poc/api",
+      "description": "Servidor da API"
+    }
+  ],
+  "tags": [
+    {
+      "name": "Clientes",
+      "description": "Endpoints de clientes"
+    },
+    {
+      "name": "Produtos",
+      "description": "Endpoints de Produtos"
+    },
+    {
+      "name": "Pedidos",
+      "description": "Endpoints de Pedidos"
+    }
+  ],
+  "paths": {
+    "/Cliente": {
+      "get": {
+        "tags": [
+          "Clientes"
+        ],
+        "summary": "Endpoint responsável por recuperar todos os clientes cadastrados.",
+        "responses": {
+          "200": {
+            "description": "Busca concluída",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Cliente"
+                  }
+                }
+              }
+            }
+          },
+          "204": {
+            "description": "Busca concluída, mas sem resultados",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "example": []
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Clientes"
+        ],
+        "summary": "Endpoint responsável por cadastrar um novo cliente",
+        "requestBody": {
+          "description": "Para mais informações sobre os parâmetros clique na opção <strong>Schema</strong>.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "Nome": {
+                    "type": "string",
+                    "minimum": 2,
+                    "minLength": 10,
+                    "maxLength": 60,
+                    "nullable": false,
+                    "uniqueItems": false,
+                    "example": "José da Silva Sauro"
+                  },
+                  "Email": {
+                    "type": "string",
+                    "nullable": true,
+                    "uniqueItems": true,
+                    "example": "jose@dasilvasauro.com.br"
+                  },
+                  "Contato": {
+                    "type": "string",
+                    "minLength": 11,
+                    "maxLength": 11,
+                    "nullable": false,
+                    "uniqueItems": true,
+                    "example": "62999887766"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Cliente cadastrado com sucesso.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Cliente"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Dados Inválidos ou Duplicados",
+            "content": {
+              "application/json": {
+                "example": "O campo Nome é obrigatório."
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Clientes"
+        ],
+        "summary": "Endpoint responsável por atualizar todos os dados de um cliente cadastrado",
+        "requestBody": {
+          "description": "Para mais informações sobre os parâmetros clique na opção <strong>Schema</strong>.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Cliente"
+              }
+            }
+          }
+        },
+        "responses": {
+          "204": {
+            "description": "Cliente atualizado com sucesso."
+          },
+          "400": {
+            "description": "Dados Inválidos ou Duplicados",
+            "content": {
+              "application/json": {
+                "example": "E-mail já cadastrado na base de dados."
+              }
+            }
+          },
+          "404": {
+            "description": "Cliente não encontrado na base de dados.",
+            "content": {
+              "application/json": {
+                "example": "Cliente não encontrado na base de dados."
+              }
+            }
+          }
+        }
+      }
+    },
+    "/Cliente/{Codigo}": {
+      "parameters": [
+        {
+          "name": "Codigo",
+          "in": "path",
+          "schema": {
+            "type": "integer"
+          },
+          "required": true
+        }
+      ],
+      "get": {
+        "tags": [
+          "Clientes"
+        ],
+        "summary": "Endpoint responsável por recuperar um cliente pelo código",
+        "responses": {
+          "200": {
+            "description": "Busca concluída.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Cliente"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "example": "Cliente não encontrado na base de dados."
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Clientes"
+        ],
+        "summary": "Endpoint responsável por excluir um cliente da base de dados",
+        "responses": {
+          "204": {
+            "description": "Cliente excluido com sucesso."
+          },
+          "404": {
+            "description": "Cliente não encontrado na base de dados.",
+            "content": {
+              "application/json": {
+                "example": "Cliente não encontrado na base de dados."
+              }
+            }
+          }
+        }
+      }
+    },
+    "/Produto": {
+      "get": {
+        "tags": [
+          "Produtos"
+        ],
+        "summary": "Endpoint responsável por recuperar todos os produtos cadastrados.",
+        "responses": {
+          "200": {
+            "description": "Busca concluída.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Produto"
+                  }
+                }
+              }
+            }
+          },
+          "204": {
+            "description": "Busca concluída, mas sem resultados.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "example": []
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Produtos"
+        ],
+        "summary": "Endpoint responsável por cadastrar um novo produto",
+        "requestBody": {
+          "description": "Para mais informações sobre os parâmetros clique na opção <strong>Schema</strong>.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "Descricao": {
+                    "type": "string",
+                    "minLength": 5,
+                    "maxLength": 30,
+                    "nullable": false,
+                    "uniqueItems": true,
+                    "example": "Feijão Seu jorge"
+                  },
+                  "Valor": {
+                    "type": "number",
+                    "nullable": false,
+                    "uniqueItems": false,
+                    "example": 7.99
+                  },
+                  "Quantidade": {
+                    "type": "integer",
+                    "nullable": false,
+                    "uniqueItems": false,
+                    "example": 250
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Produto cadastrado com sucesso.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Produto"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Dados Inválidos ou Duplicados",
+            "content": {
+              "application/json": {
+                "example": "A Descrição deve conter entre 5 e 30 caracteres."
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Produtos"
+        ],
+        "summary": "Endpoint responsável por atualizar todos os dados de um produto cadastrado",
+        "requestBody": {
+          "description": "Para mais informações sobre os parâmetros clique na opção <strong>Schema</strong>.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Produto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "204": {
+            "description": "Produto atualizado com sucesso."
+          },
+          "400": {
+            "description": "Dados Inválidos ou Duplicados",
+            "content": {
+              "application/json": {
+                "example": "Descrição já existe na base de dados."
+              }
+            }
+          },
+          "404": {
+            "description": "Produto não encontrado na base de dados.",
+            "content": {
+              "application/json": {
+                "example": "Produto não encontrado na base de dados."
+              }
+            }
+          }
+        }
+      }
+    },
+    "/Produto/{Codigo}": {
+      "parameters": [
+        {
+          "name": "Codigo",
+          "in": "path",
+          "schema": {
+            "type": "integer"
+          },
+          "required": true
+        }
+      ],
+      "get": {
+        "tags": [
+          "Produtos"
+        ],
+        "summary": "Endpoint responsável por recuperar um produto pelo código",
+        "responses": {
+          "200": {
+            "description": "Busca concluída.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Produto"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "example": "Produto não encontrado na base de dados."
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Produtos"
+        ],
+        "summary": "Endpoint responsável por excluir um produto da base de dados",
+        "responses": {
+          "204": {
+            "description": "Produto excluido com sucesso."
+          },
+          "404": {
+            "description": "Produto não encontrado na base de dados.",
+            "content": {
+              "application/json": {
+                "example": "Produto não encontrado na base de dados."
+              }
+            }
+          }
+        }
+      }
+    },
+    "/Pedido": {
+      "get": {
+        "tags": [
+          "Pedidos"
+        ],
+        "summary": "Endpoint responsável por recuperar todos os pedidos cadastrados.",
+        "responses": {
+          "200": {
+            "description": "Busca concluída.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Pedido"
+                  }
+                }
+              }
+            }
+          },
+          "204": {
+            "description": "Busca concluída, mas sem resultados.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "example": []
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Pedidos"
+        ],
+        "summary": "Endpoint responsável por cadastrar um novo pedido",
+        "requestBody": {
+          "description": "Para mais informações sobre os parâmetros clique na opção <strong>Schema</strong>.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "CodigoCliente": {
+                    "type": "integer",
+                    "nullable": false,
+                    "uniqueItems": false,
+                    "example": 33
+                  },
+                  "Produtos": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "Codigo": {
+                          "type": "integer",
+                          "nullable": false,
+                          "uniqueItems": true,
+                          "example": 11
+                        },
+                        "Quantidade": {
+                          "type": "integer",
+                          "minLength": 0,
+                          "nullable": false,
+                          "example": 7
+                        }
+                      }
+                    }
+                  },
+                  "EnviarPorEmail": {
+                    "type": "boolean",
+                    "nullable": false,
+                    "uniqueItems": false
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Pedido cadastrado com sucesso.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Pedido"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Dados Inválidos",
+            "content": {
+              "application/json": {
+                "example": "É necessário no mínimo 1 produto para incluir um pedido"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/Pedido/{Codigo}": {
+      "parameters": [
+        {
+          "name": "Codigo",
+          "in": "path",
+          "schema": {
+            "type": "integer"
+          },
+          "required": true
+        }
+      ],
+      "get": {
+        "tags": [
+          "Pedidos"
+        ],
+        "summary": "Endpoint responsável por recuperar um pedido pelo código",
+        "responses": {
+          "200": {
+            "description": "Busca concluída.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Pedido"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado",
+            "content": {
+              "application/json": {
+                "example": "Pedido não encontrado na base de dados."
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Pedidos"
+        ],
+        "summary": "Endpoint responsável por excluir um pedido da base de dados",
+        "responses": {
+          "204": {
+            "description": "Pedido excluido com sucesso."
+          },
+          "404": {
+            "description": "Pedido não encontrado na base de dados.",
+            "content": {
+              "application/json": {
+                "example": "Pedido não encontrado na base de dados."
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Cliente": {
+        "type": "object",
+        "properties": {
+          "Codigo": {
+            "type": "integer",
+            "nullable": false,
+            "uniqueItems": true,
+            "example": 3
+          },
+          "Nome": {
+            "type": "string",
+            "minimum": 2,
+            "minLength": 10,
+            "maxLength": 60,
+            "nullable": false,
+            "uniqueItems": false,
+            "example": "José da Silva Sauro"
+          },
+          "Email": {
+            "type": "string",
+            "nullable": true,
+            "uniqueItems": true,
+            "example": "jose@dasilvasauro.com.br"
+          },
+          "Contato": {
+            "type": "string",
+            "minLength": 11,
+            "maxLength": 11,
+            "nullable": false,
+            "uniqueItems": true,
+            "example": "62999887766"
+          }
+        }
+      },
+      "Produto": {
+        "type": "object",
+        "properties": {
+          "Codigo": {
+            "type": "integer",
+            "nullable": false,
+            "uniqueItems": true,
+            "example": 11
+          },
+          "Descricao": {
+            "type": "string",
+            "minLength": 5,
+            "maxLength": 30,
+            "nullable": false,
+            "uniqueItems": true,
+            "example": "Arroz Cristão"
+          },
+          "Valor": {
+            "type": "number",
+            "nullable": false,
+            "example": 22.5
+          },
+          "Quantidade": {
+            "type": "integer",
+            "minLength": 0,
+            "nullable": false,
+            "example": 3
+          }
+        }
+      },
+      "Pedido": {
+        "type": "object",
+        "properties": {
+          "Codigo": {
+            "type": "integer",
+            "nullable": false,
+            "uniqueItems": true,
+            "example": 325
+          },
+          "CodigoCliente": {
+            "type": "integer",
+            "nullable": false,
+            "uniqueItems": false,
+            "example": 3
+          },
+          "NomeCliente": {
+            "type": "string",
+            "nullable": false,
+            "uniqueItems": false,
+            "example": "Abedonildo Francinaldo Rodrigues"
+          },
+          "Produtos": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Produto"
+            }
+          },
+          "DataPedido": {
+            "type": "string",
+            "nullable": false,
+            "uniqueItems": false,
+            "example": "04/09/2021 21:33"
+          },
+          "ValorPedido": {
+            "type": "number",
+            "nullable": false,
+            "uniqueItems": false,
+            "example": 67.5
+          },
+          "EnviarPorEmail": {
+            "type": "boolean",
+            "nullable": false,
+            "uniqueItems": false
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,146 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>LG.POC.WebApi</name>
+    </assembly>
+    <members>
+        <member name="T:LG.POC.WebApi.Controllers.PedidoController">
+            <summary>
+            Controller de Pedidos
+            </summary>
+        </member>
+        <member name="M:LG.POC.WebApi.Controllers.PedidoController.Insira(LG.POC.InterfaceFabricas.ContratosDeServico.Dados.DtoPedidoInsercao)">
+            <summary>
+            Endpoint responsável por cadastrar um pedido.
+            </summary>
+            <param name="pedido">Obrigatóriamente deve ter no mínimo 1 produto e estar vinculado a um cliente.</param>
+        </member>
+        <member name="M:LG.POC.WebApi.Controllers.PedidoController.Exclua(System.Int32)">
+            <summary>
+            Endpoint responsável por excluir um pedido.
+            </summary>
+            <param name="codigo">Identificador do pedido</param>
+            <response code="204">Pedido excluído com sucesso.</response>
+            <response code="404">Pedido não encontrado na base de dados.</response>
+        </member>
+        <member name="M:LG.POC.WebApi.Controllers.PedidoController.ExcluaVarios(System.Int32[])">
+            <summary>
+            Endpoint responsável por excluir vários produtos de uma vez.
+            </summary>
+            <param name="codigos">Identificadores dos pedidos.</param>
+            <response code="204">Pedidos excluídos com sucesso.</response>
+            <response code="400">Dados inválidos.</response>
+        </member>
+        <member name="M:LG.POC.WebApi.Controllers.PedidoController.ObtenhaTodos">
+            <summary>
+            Endpoint responsável por buscar todos os pedidos cadastrados.
+            </summary>
+        </member>
+        <member name="M:LG.POC.WebApi.Controllers.PedidoController.ObtenhaPorCodigo(System.Int32)">
+            <summary>
+            Endpoint responsável por buscar um pedido atráves do código.
+            </summary>
+            <param name="codigo">Identificador do pedido.</param>
+            <reponse code="404">Pedido não encontrado na base de dados.</reponse>
+        </member>
+        <member name="T:LG.POC.WebApi.Controllers.ProdutoController">
+            <summary>
+            Controller de Produtos
+            </summary>
+        </member>
+        <member name="M:LG.POC.WebApi.Controllers.ProdutoController.Insira(LG.POC.InterfaceFabricas.ContratosDeServico.Dados.DtoProdutoCadastro)">
+            <summary>
+            Endpoint responsável por cadastrar um produto.
+            </summary>
+            <param name="produto">Descrição é obrigatória e não pode ser cadastrada em duplicidade. Valor e Quantidade devem ser números positivos.</param>
+        </member>
+        <member name="M:LG.POC.WebApi.Controllers.ProdutoController.Exclua(System.Int32)">
+            <summary>
+            Endpoint responsável por excluir um produto.
+            </summary>
+            <param name="codigo">Identificador do produto</param>
+            <response code="204">Produto excluído com sucesso.</response>
+            <response code="404">Produto não encontrado na base de dados.</response>
+        </member>
+        <member name="M:LG.POC.WebApi.Controllers.ProdutoController.ExcluaVarios(System.Int32[])">
+            <summary>
+            Endpoint responsável por excluir vários produtos de uma vez.
+            </summary>
+            <param name="codigos">Identificadores dos produtos.</param>
+            <response code="204">Produtos excluídos com sucesso.</response>
+            <response code="400">Dados inválidos.</response>
+        </member>
+        <member name="M:LG.POC.WebApi.Controllers.ProdutoController.Atualize(LG.POC.InterfaceFabricas.ContratosDeServico.Dados.DtoProduto)">
+            <summary>
+            Endpoint responsável por atualizar todos os dados de um produto.
+            </summary>
+            <param name="produto">Código é obrigatório.</param>
+            <response code="204">Produto atualizado com sucesso.</response>
+            <response code="400">Dados informados são inválidos ou duplicados.</response>
+            <response code="404">Produto não encontrado na base de dados.</response>
+        </member>
+        <member name="M:LG.POC.WebApi.Controllers.ProdutoController.ObtenhaTodos">
+            <summary>
+            Endpoint responsável por buscar todos os produtos cadastrados.
+            </summary>
+        </member>
+        <member name="M:LG.POC.WebApi.Controllers.ProdutoController.ObtenhaPorCodigo(System.Int32)">
+            <summary>
+            Endpoint responsável por buscar um produto atráves do código.
+            </summary>
+            <param name="codigo">Identificador do produto.</param>
+            <response code="404">Produto não encontrado na base de dados.</response>
+        </member>
+        <member name="T:LG.POC.WebApi.Controllers.ClienteController">
+            <summary>
+            Controller de Clientes
+            </summary>
+        </member>
+        <member name="M:LG.POC.WebApi.Controllers.ClienteController.Insira(LG.POC.InterfaceFabricas.ContratosDeServico.Dados.DtoClienteInsercao)">
+            <summary>
+            Endpoint responsável por cadastrar um cliente.
+            </summary>
+            <param name="cliente">Nome e Contato são obrigatórios. Email deve ser um e-mail válido.
+            Email e Contato não podem ser cadastrados em duplicidade.
+            </param>
+        </member>
+        <member name="M:LG.POC.WebApi.Controllers.ClienteController.Exclua(System.Int32)">
+            <summary>
+            Endpoint responsável por excluir um cliente.
+            </summary>
+            <param name="codigo">Identificador do cliente.</param>
+            <response code="204">Cliente excluído com sucesso.</response>
+            <response code="400">Há um ou mais clientes selecionados com ocorrência à um ou mais pedidos.</response>
+            <response code="404">Cliente não encontrado na base de dados.</response>
+        </member>
+        <member name="M:LG.POC.WebApi.Controllers.ClienteController.ExcluaVarios(System.Int32[])">
+            <summary>
+            Endpoint responsável por excluir vários clientes de uma vez.
+            </summary>
+            <param name="codigos">Identificadores dos clientes.</param>
+            <response code="204">Clientes excluídos com sucesso.</response>
+            <response code="400">Dados inválidos.</response>
+        </member>
+        <member name="M:LG.POC.WebApi.Controllers.ClienteController.Atualize(LG.POC.InterfaceFabricas.ContratosDeServico.Dados.DtoCliente)">
+            <summary>
+            Endpoint responsável por atualizar todos os dados de um cliente.
+            </summary>
+            <param name="cliente">Código é obrigatório.</param>
+            <response code="204">Cliente atualizado com sucesso.</response>
+            <response code="400">Dados informados são inválidos ou duplicados.</response>
+            <response code="404">Cliente não encontrado na base de dados.</response>
+        </member>
+        <member name="M:LG.POC.WebApi.Controllers.ClienteController.ObtenhaTodos">
+            <summary>
+            Endpoint responsável por buscar todos os clientes cadastrados.
+            </summary>
+        </member>
+        <member name="M:LG.POC.WebApi.Controllers.ClienteController.ObtenhaPorCodigo(System.Int32)">
+            <summary>
+            Endpoint responsável por buscar um cliente atráves do código.
+            </summary>
+            <param name="codigo">Identificador do cliente.</param>
+            <response code="404">Cliente não encontrado na base de dados.</response>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>LG.POC.WebApi</name>
+    </assembly>
+    <members>
+        <member name="T:LG.POC.WebApi.Controllers.ClienteController">
+            <summary>
+            Controller de Clientes
+            </summary>
+        </member>
+        <member name="M:LG.POC.WebApi.Controllers.ClienteController.Insira(LG.POC.InterfaceFabricas.ContratosDeServico.Dados.DtoCliente)">
+            <summary>
+            Endpoint responsável por inserir um cliente.
+            </summary>
+            <param name="dto">Cliente</param>
+            <returns>Os dados do <see cref="T:LG.POC.WebApi.Models.Cliente"/> inseridos e sua url de localização</returns>
+        </member>
+        <member name="M:LG.POC.WebApi.Controllers.ClienteController.Exclua(System.Int32)">
+            <summary>
+            Endpoint responsável por excluir um cliente
+            </summary>
+            <param name="codigo">Codigo</param>
+            <returns></returns>
+        </member>
+        <member name="M:LG.POC.WebApi.Controllers.ClienteController.Atualize(LG.POC.InterfaceFabricas.ContratosDeServico.Dados.DtoCliente)">
+            <summary>
+            Endpoint responsável por atualizar um cliente
+            </summary>
+            <param name="dto">Cliente</param>
+            <returns></returns>
+        </member>
+        <member name="M:LG.POC.WebApi.Controllers.ClienteController.ObtenhaTodos">
+            <summary>
+            Endpoint responsável por buscar todos os clientes cadastrados
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:LG.POC.WebApi.Controllers.ClienteController.ObtenhaPorCodigo(System.Int32)">
+            <summary>
+            Endpoint responsável por buscar um cliente atráves do código
+            </summary>
+            <param name="codigo">Identificador do tipo <see cref="T:System.Int32"/> usado para identificar o objeto <see cref="T:LG.POC.WebApi.Models.Cliente"/></param>
+            <returns>
+            Uma instância de <see cref="T:LG.POC.WebApi.Models.Cliente"/> com valores dos atributos correspontesde ao cliente do <paramref name="codigo"/> informado
+            </returns>
+        </member>
+    </members>
+</doc>
